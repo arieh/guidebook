@@ -17,7 +17,7 @@ Site.prototype = {
                    '<div data-role="collapsible-set" data-theme="" data-content-theme="">'+
                         '<div data-role="collapsible" data-collapsed="true">'+
                             '<h3>Location</h3>'+
-                            '<img src="https://maps.googleapis.com/maps/api/staticmap?center={location}&zoom=14&size=288x200&maptype=terrain&markers=color:blue|label:S|{location}&sensor=false" height="200" width="288" />'+
+                            '<a href="https://maps.google.com/?q={location}" target="_blank"><img src="https://maps.googleapis.com/maps/api/staticmap?center={location}&zoom=14&size=288x200&maptype=terrain&markers=color:blue|label:S|{location}&sensor=false" height="200" width="288" /></a>'+
                         '</div>'+
                         '<div data-role="collapsible data-collapsed="false">'+
                             '<h3>Grades</h3>'+
