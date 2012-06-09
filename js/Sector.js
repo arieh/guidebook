@@ -29,17 +29,16 @@ Sector.prototype = {
                         '<div class="image"></div>'+
                     '</div>'+
                 '</div>'+
-                '<div data-role="collapsible-set" data-theme="" data-content-theme="">'+
-                    '<div data-role="collapsible" data-collapsed="false">'+
-                        '<h3>Routes</h3>'+
-                        '<ol data-inset="true" class="list" data-role="collapsible-set">'+
-                        '</ol>'+
-                    '</div>'+
-                '</div>'+
+                '<h3>Routes</h3>'+
+                '<ol data-inset="true" class="list" data-role="collapsible-set">'+
+                '</ol>'+
             '</div>'+
         '</div>',
     item_template : '<li data-role="collapsible">'+
-                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span><span class="section bolts">Bolts: {bolts}</span><span class="section length">Length: {length}</span><span class="section bolter">Bolted by: {bolter}</span></h4>'+
+                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span></h4>'+
+                        "<div class='content'>"+
+                            '<div class="data"><span class="section bolts">Bolts: {bolts}</span><span class="section length">Length: {length}</span><span class="section bolter">Bolted by: {bolter}</span></div>'+
+                        "</div>"+
                     '</li>', 
     generate : function(){
         this.element = $('#'+this.id);
@@ -77,7 +76,7 @@ Sector.prototype = {
         li.attr('id',Sector.getRouteID(this.id,route.name));
 
         if (route.comments){
-            li.append($("<p>"+this.annotate(route.comments)+"</p>"));
+            $('div.content',li).append($("<p>"+this.annotate(route.comments)+"</p>"));
         }else{
             li.attr('disabled','disabled');
             li.addClass('disabled');

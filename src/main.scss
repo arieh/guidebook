@@ -18,26 +18,21 @@
 
 .list{
     li {
-        .title{
+        .title {
             width:150px;
             display:inline-block;
         } 
 
-        .section{
-            display:inline-block;
-            margin-left:20px;
+        .section {
             font-weight: normal;
             width:30px;
-            border-right:1px solid #ccc;   
-            padding-right: 10px;
         }  
 
-        .bolter{
+        .bolter {
             width:auto;
-            border:0;
         }          
 
-        .grade{
+        .grade {
             font-weight:bold;
         }        
 
@@ -59,11 +54,30 @@
         background:#fff;
         border-right:1px solid #ccc;
         border-left: 1px solid #ccc;
-    }     
+    }
+
+    .data {
+        margin-bottom: 3px;
+        border-bottom: 1px solid #ccc;
+
+        .section {
+            padding:5px 10px;  
+            display:inline-block;
+            margin-left:20px; 
+            border-right:1px solid #ccc;   
+            padding-right: 10px;           
+        }
+
+        .bolter {
+            border: 0;
+        }
+    }
 }
 
-ol.list{
+ol.list {
     counter-reset: item;
+    margin:0;
+    padding:0;
     li {
         counter-increment: item;
         padding-left:30px;
