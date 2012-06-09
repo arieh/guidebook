@@ -15,7 +15,7 @@ Site.prototype = {
                     '<h3>{name}</h3>'+
                '</div>'+                    
                '<div data-role="content">'+               
-                   '<div data-role="collapsible-set" data-theme="" data-content-theme="">'+
+                   '<div data-role="collapsible-set">'+
                         '<div data-role="collapsible" data-collapsed="true">'+
                             '<h3>Location</h3>'+
                             '<a href="https://maps.google.com/?q={location}" target="_blank"><img src="https://maps.googleapis.com/maps/api/staticmap?center={location}&zoom=14&size=288x200&maptype=terrain&markers=color:blue|label:S|{location}&sensor=false" height="200" width="288" /></a>'+
@@ -24,8 +24,8 @@ Site.prototype = {
                             '<h4>Site Map</h4>'+
                             '{map}'+
                         '</div>'+
-                        '<div data-role="collapsible data-collapsed="false">'+
-                            '<h3>Grades</h3>'+
+                        '<div data-role="collapsible" data-collapsed="true">'+
+                            '<h4>Grades</h4>'+
                             '<div class="grades"></div>'+
                         '</div>'+
                    '</div>'+
