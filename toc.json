@@ -88,6 +88,52 @@ var toc = [
                         "comments" : "When passing by a woman said she would rather die than climb this route. Hence it's name. Hard overhand holds."
                     }
                 ]
+            },
+            {
+                "name" : "Walkabout",
+                "routes" : [
+                    {
+                        "name" : "Cactus",
+                        "rating" : "6c",
+                        "stars" : 2,
+                        "bolter" : "Flix Slamovics",
+                        "comments" : "Thorny but fun. Challenging climb up to small roof"
+                    },
+                    {
+                        "name" : "Berta",
+                        "rating" : "6a",
+                        "stars" : 3,
+                        "length" : "24m",
+                        "bolter" : "Yotam Orkhan, Max Suster & Dima Fridman",
+                        "bolts" : 10,
+                        "comments" : "Named after Felix's mom."
+                    },
+                    {
+                        "name" : "Walkabout",
+                        "rating" : "5+",
+                        "length" : "30m",
+                        "stars" : 3,
+                        "bolts" : 14,
+                        "bolter" : "Flix & Max",
+                        "comments" : "A classic! Fun for begginers. Can also be top-roped or trad climbed."
+                    },
+                    {
+                        "name" : "Learning to Fly",
+                        "rating" : "6c",
+                        "stars" : 3,
+                        "bolts" : 13,
+                        "bolter" : "Flix Slamovics",
+                        "comments" : "Interesting crux at the top."
+                    },
+                    {
+                        "name" : "Sunny",
+                        "rating" : "6a+",
+                        "stars" : 2,
+                        "bolts" : 13,
+                        "bolter" : "Flix S",
+                        "comments" : "Very nice moves on the upper parts."
+                    }       
+                ]
             }
         ]
     }
