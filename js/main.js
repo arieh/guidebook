@@ -1,16 +1,16 @@
 function bind(that){
     var self = this,
         args = arguments.length > 1 ? Array.prototype.slice.call(arguments, 1) : null,
-        F = function(){};
+        F = function(){}, bound;
 
-    var bound = function(){
-        var context = that, length = arguments.length;
+    bound = function(){
+        var context = that, length = arguments.length, result;
         if (this instanceof bound){
             F.prototype = self.prototype;
-            context = new F;
+            context = new F();
         }
 
-        var result = (!args && !length)
+        result = (!args && !length)
             ? self.call(context)
             : self.apply(context, args && length ? args.concat(Array.prototype.slice.call(arguments, 0)) : args || arguments);
         
@@ -61,8 +61,10 @@ Main.prototype = {
         data.forEach(this.addSite.bind(this));
     },
     addSite : function(site){
-        var site = new Site(site),
-            el = $(this.site_template.replace('{id}', site.id).replace('{title}',site.name));
+        var el; 
+        
+        site = new Site(site);
+        el = $(this.site_template.replace('{id}', site.id).replace('{title}',site.name));
         
         this.sites[site.id] = site;
 
