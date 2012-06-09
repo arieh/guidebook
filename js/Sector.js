@@ -99,9 +99,13 @@ Sector.prototype = {
         }
     },
     loadImage : function(){
+        if (this.image_loaded) return;
+
         var img = new Image;
         img.src = 'images/sites/'+this.site.id+'/sectors/'+this.id+'.jpg';
         this.elements.image.append(img);
+
+        this.image_loaded = true;
     },
     annotate : function(str){
         var $this = this;
