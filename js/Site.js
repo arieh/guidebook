@@ -53,11 +53,21 @@ Site.prototype = {
     },
     createSector : function(index,data){
         var sector = new Sector(this,data),
-            el = $(this.item_template.replace('{id}',sector.id).replace('{title}',sector.name));
+            el = $(this.item_template.replace('{id}',sector.id).replace('{title}',sector.name)),
+            a = $('a',el);
 
         this.sectors[sector.id] = sector;
 
+        $.each(sector.grades, function(name,number){
+            if (number == 0) return;
+            a.append(
+                $('<span class="section">{name}: {number}</span>'.replace('{name}',name).replace('{number}',number))
+            );
+        });
+
         this.elements.list.append(el);
+
+        sector.loadImage();
     },
     populateGrades : function(){
         var grades = {}, names=[], html='', letters =['a','b','c','d'];
