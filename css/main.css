@@ -1,0 +1,83 @@
+/* line 1, ../src/main.scss */
+.grid-block {
+  box-shadow: 0 0 2px #000000 inset;
+  min-height: 60px;
+  text-align: center;
+  width: 50%;
+  line-height: 60px;
+  vertical-align: middle;
+}
+/* line 9, ../src/main.scss */
+.grid-block h4 {
+  margin: 0;
+}
+
+/* line 14, ../src/main.scss */
+.ui-li-static:before {
+  position: absolute;
+  left: 5px;
+}
+
+/* line 21, ../src/main.scss */
+.list li .title {
+  width: 150px;
+  display: inline-block;
+}
+/* line 26, ../src/main.scss */
+.list li .section {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: normal;
+  width: 50px;
+}
+/* line 33, ../src/main.scss */
+.list li .bolter {
+  width: auto;
+}
+/* line 37, ../src/main.scss */
+.list li .grade {
+  font-weight: bold;
+}
+/* line 42, ../src/main.scss */
+.list p a {
+  padding: 0 2px;
+  margin: 0;
+}
+/* line 47, ../src/main.scss */
+.list .ui-collapsible-content {
+  background: #fff;
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+/* line 54, ../src/main.scss */
+ol.list {
+  counter-reset: item;
+}
+/* line 56, ../src/main.scss */
+ol.list li {
+  counter-increment: item;
+  padding-left: 30px;
+  list-style-type: none;
+  position: relative;
+}
+/* line 62, ../src/main.scss */
+ol.list li:before {
+  content: counter(item, decimal) ".";
+  font-size: 0.8em;
+  height: 40px;
+  left: 32px;
+  line-height: 40px;
+  position: absolute;
+  vertical-align: middle;
+  z-index: 1000;
+  text-align: right;
+}
+/* line 74, ../src/main.scss */
+ol.list li.disabled .ui-icon {
+  display: none;
+}
+/* line 79, ../src/main.scss */
+ol.list h4 a {
+  padding-left: 30px;
+}
