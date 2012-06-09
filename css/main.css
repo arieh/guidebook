@@ -26,13 +26,14 @@
 /* line 26, ../src/main.scss */
 .list li .section {
   font-weight: normal;
+  padding: 5px 10px;
   width: 30px;
 }
-/* line 31, ../src/main.scss */
+/* line 32, ../src/main.scss */
 .list li .bolter {
   width: auto;
 }
-/* line 35, ../src/main.scss */
+/* line 36, ../src/main.scss */
 .list li .grade {
   font-weight: bold;
   border: 1px solid #ccc;
@@ -41,33 +42,32 @@
   background: #666;
   color: #ddd;
 }
-/* line 44, ../src/main.scss */
+/* line 45, ../src/main.scss */
 .list li .bolts {
   width: 80px;
 }
-/* line 48, ../src/main.scss */
+/* line 49, ../src/main.scss */
 .list li .length {
   width: 100px;
 }
-/* line 53, ../src/main.scss */
+/* line 54, ../src/main.scss */
 .list p a {
   padding: 0 2px;
   margin: 0;
 }
-/* line 58, ../src/main.scss */
+/* line 59, ../src/main.scss */
 .list .ui-collapsible-content {
   background: #fff;
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
-/* line 64, ../src/main.scss */
+/* line 65, ../src/main.scss */
 .list .data {
   margin-bottom: 3px;
   border-bottom: 1px solid #ccc;
 }
-/* line 68, ../src/main.scss */
+/* line 69, ../src/main.scss */
 .list .data .section {
-  padding: 5px 10px;
   display: inline-block;
   margin-left: 20px;
   border-right: 1px solid #ccc;

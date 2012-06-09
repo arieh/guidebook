@@ -25,6 +25,7 @@
 
         .section {
             font-weight: normal;
+            padding:5px 10px;  
             width:30px;
         }  
 
@@ -66,7 +67,6 @@
         border-bottom: 1px solid #ccc;
 
         .section {
-            padding:5px 10px;  
             display:inline-block;
             margin-left:20px; 
             border-right:1px solid #ccc;   
