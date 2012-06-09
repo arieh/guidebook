@@ -77,9 +77,6 @@ Sector.prototype = {
 
         if (route.comments){
             $('div.content',li).append($("<p>"+this.annotate(route.comments)+"</p>"));
-        }else{
-            li.attr('disabled','disabled');
-            li.addClass('disabled');
         }
 
         if (route.length){
