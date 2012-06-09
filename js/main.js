@@ -3,7 +3,13 @@ function Main(){
 
     this.sites = {};
 
-    // $.getJSON('./toc.json', this.load.bind(this));
+    this.handles = {
+        site : this.siteLoad.bind(this),
+        sector : this.sectorLoad.bind(this)
+    };
+
+    $( document ).bind( "pagebeforechange", this.pageChange.bind(this));
+
     this.load(toc);
 }
 
@@ -35,5 +41,28 @@ Main.prototype = {
         this.sites[site.id] = site;
 
         this.elements.list.append(el);
+    },
+
+    pageChange : function(e,data){
+        var el = $(data.toPage[0]),
+            type = el.attr('data-type'),
+            handle = this.handles[type],
+            id = el.attr('id');
+        
+        if (!handle) return;
+
+        handle(id,el);
+    },
+
+    siteLoad : function(id){
+        this.sites[id].loadSectors();
+    },
+
+    sectorLoad : function(id,el){
+        var parent = el.attr('data-parent'),
+            site = this.sites[parent],
+            sector = site.sectors[id];
+
+        sector.loadImage();
     }
 };

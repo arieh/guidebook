@@ -17,7 +17,7 @@ function Sector(site, data){
 };
 
 Sector.prototype = {
-    template : '<div data-role="page" id="{id}">'+
+    template : '<div data-role="page" id="{id}" data-type="sector" class="sector" data-parent="{parent}">'+
             '<div data-theme="b" data-role="header">'+
                 '<h3>{name}</h3>'+
                 '<a data-role="button" data-inline="true" data-direction="reverse" data-rel="back" data-transition="slide" href="page1" data-icon="arrow-l" data-iconpos="left">Back</a>'+
@@ -32,13 +32,15 @@ Sector.prototype = {
                 '<div data-role="collapsible-set" data-theme="" data-content-theme="">'+
                     '<div data-role="collapsible" data-collapsed="false">'+
                         '<h3>Routes</h3>'+
-                        '<ol data-role="listview" data-divider-theme="b" data-inset="true" class="list">'+
+                        '<ol data-inset="true" class="list" data-role="collapsible-set">'+
                         '</ol>'+
                     '</div>'+
                 '</div>'+
             '</div>'+
         '</div>',
-    item_template : '<li><strong class=title>{title}</strong><span class="section grade">{grade}</span><span class="section bolts">Bolts: {bolts}</span><span class="section bolter">Bolted by: {bolter}</span></li>', 
+    item_template : '<li data-role="collapsible">'+
+                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span><span class="section bolts">Bolts: {bolts}</span><span class="section bolter">Bolted by: {bolter}</span></h4>'+
+                    '</li>', 
     generate : function(){
         this.element = $('#'+this.id);
         if (this.element.length){
@@ -48,6 +50,7 @@ Sector.prototype = {
                 this.template
                     .replace('{id}',this.id)
                     .replace('{name}',this.name)
+                    .replace('{parent}',this.site.id)
             );
         }
 
@@ -68,7 +71,16 @@ Sector.prototype = {
                 .replace('{bolts}',route.bolts || '?')
                 .replace('{bolter}',route.bolter)
                 .replace('{grade}',route.rating)
-            );
+            ),a;
+
+        li.attr('id',Sector.getRouteID(this.id,route.name));
+
+        if (route.comments){
+            li.append($("<p>"+this.annotate(route.comments)+"</p>"));
+        }else{
+            li.attr('disabled','disabled');
+            li.addClass('disabled');
+        }
 
         this.elements.list.append(li);
 
@@ -89,9 +101,23 @@ Sector.prototype = {
         var img = new Image;
         img.src = 'images/sites/'+this.site.id+'/sectors/'+this.id+'.jpg';
         this.elements.image.append(img);
+    },
+    annotate : function(str){
+        var $this = this;
+        return str.replace(/#\{route:[^}]+\}/g, function(match){
+            var regex = /\{route\:([^}]+)/,
+                str = match.match(regex)[1],
+                id = Sector.getRouteID($this.id,str);
+
+            return "<a href='#"+id+"'>"+str+"</a>";
+        });
     }
 };                                        
 
 Sector.getID = function(site_id, name){
     return site_id + '_' + Site.getID(name);   
 };
+
+Sector.getRouteID = function(sector_id, route){
+    return sector_id + '_' + Site.getID(route);    
+}

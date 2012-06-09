@@ -45,8 +45,46 @@
                 left:5px;
             }
 
-            ol.list .ui-li-static {
+            ol.list {
+                counter-reset: item;
+            }
+
+            ol.list li {
+                counter-increment: item;
                 padding-left:30px;
+                list-style-type:none;
+                position:relative;
+            }
+
+            ol.list h4 a{
+                padding-left:30px;
+            }
+
+            ol.list li:before {
+                content: counter(item, decimal) ".";
+                font-size: 0.8em;
+                height: 40px;
+                left: 32px;
+                line-height: 40px;
+                position: absolute;
+                vertical-align: middle;
+                z-index: 1000;
+                text-align:right;
+            }
+
+            ol.list li.disabled .ui-icon{
+                display:none;
+            }
+
+            .list .ui-collapsible-content {
+                background:#fff;
+                border-right:1px solid #ccc;
+                border-left: 1px solid #ccc;
+            }
+
+            .list p a {
+                padding:0 2px;
+                margin: 0;
             }
         </style>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">

@@ -2,14 +2,15 @@ function Site(data){
     this.data = data;
     this.name = this.data.name;
     this.id   = Site.getID(this.name); 
-    this.sectors = {};
+    this.sectors = {}; 
     this.generate();
     this.populateSectors();
-    this.populateGrades();
+    this.populateGrades(); 
+ 
 }
 
 Site.prototype = {
-    template : '<div id={id} data-role="page" class="site"><div data-role="header">'+
+    template : '<div id={id} data-role="page" class="site" data-type="site"><div data-role="header">'+
                     '<a data-role="button" data-inline="true" data-direction="reverse" data-rel="back" data-transition="slide" data-theme="b" href="page1" data-icon="arrow-l" data-iconpos="left">Back</a>'+
                     '<h3>{name}</h3>'+
                '</div>'+                    
@@ -48,6 +49,13 @@ Site.prototype = {
 
         $(document.body).append(this.element);
     },
+
+    loadSectors : function(){
+        if (this.populated) return;
+
+        this.populated = true;
+    },
+
     populateSectors : function(){
         $.each(this.data.sectors,this.createSector.bind(this));
     },
@@ -66,8 +74,6 @@ Site.prototype = {
         });
 
         this.elements.list.append(el);
-
-        sector.loadImage();
     },
     populateGrades : function(){
         var grades = {}, names=[], html='', letters =['a','b','c','d'];
