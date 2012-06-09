@@ -35,7 +35,7 @@ Sector.prototype = {
             '</div>'+
         '</div>',
     item_template : '<li data-role="collapsible">'+
-                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span></h4>'+
+                        '<h4>{title} <span class="section grade">{grade}</span></h4>'+
                         "<div class='content'>"+
                             '<div class="data"><span class="section bolts">Bolts: {bolts}</span><span class="section length">Length: {length}</span><span class="section bolter">Bolted by: {bolter}</span></div>'+
                         "</div>"+
