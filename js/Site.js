@@ -20,6 +20,10 @@ Site.prototype = {
                             '<h3>Location</h3>'+
                             '<a href="https://maps.google.com/?q={location}" target="_blank"><img src="https://maps.googleapis.com/maps/api/staticmap?center={location}&zoom=14&size=288x200&maptype=terrain&markers=color:blue|label:S|{location}&sensor=false" height="200" width="288" /></a>'+
                         '</div>'+
+                        '<div data-role="collapsible" data-collapsed="true">'+
+                            '<h4>Site Map</h4>'+
+                            '{map}'+
+                        '</div>'+
                         '<div data-role="collapsible data-collapsed="false">'+
                             '<h3>Grades</h3>'+
                             '<div class="grades"></div>'+
@@ -39,6 +43,7 @@ Site.prototype = {
                     .replace('{id}', this.id)
                     .replace('{name}',this.name)
                     .replace(/\{location\}/g,this.data.location.join(","))
+                    .replace('{map}',"<img src='images/sites/"+this.id+"/map.jpg'/>")
             );
         }
 
