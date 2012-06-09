@@ -39,7 +39,7 @@ Sector.prototype = {
             '</div>'+
         '</div>',
     item_template : '<li data-role="collapsible">'+
-                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span><span class="section bolts">Bolts: {bolts}</span><span class="section bolter">Bolted by: {bolter}</span></h4>'+
+                        '<h4><strong class=title>{title}</strong><span class="section grade">{grade}</span><span class="section bolts">Bolts: {bolts}</span><span class="section length">Length: {length}</span><span class="section bolter">Bolted by: {bolter}</span></h4>'+
                     '</li>', 
     generate : function(){
         this.element = $('#'+this.id);
@@ -71,6 +71,7 @@ Sector.prototype = {
                 .replace('{bolts}',route.bolts || '?')
                 .replace('{bolter}',route.bolter)
                 .replace('{grade}',route.rating)
+                .replace('{length}',route.length || "?")
             ),a;
 
         li.attr('id',Sector.getRouteID(this.id,route.name));
@@ -80,6 +81,10 @@ Sector.prototype = {
         }else{
             li.attr('disabled','disabled');
             li.addClass('disabled');
+        }
+
+        if (route.length){
+            $('h4',li).append($());    
         }
 
         this.elements.list.append(li);

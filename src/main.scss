@@ -27,16 +27,27 @@
             display:inline-block;
             margin-left:20px;
             font-weight: normal;
-            width:50px;
+            width:30px;
+            border-right:1px solid #ccc;   
+            padding-right: 10px;
         }  
 
         .bolter{
             width:auto;
+            border:0;
         }          
 
         .grade{
             font-weight:bold;
         }        
+
+        .bolts { 
+            width:80px;
+        }
+
+        .length {
+            width:100px;
+        }
     }   
     
     p a {

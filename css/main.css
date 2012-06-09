@@ -28,40 +28,51 @@
   display: inline-block;
   margin-left: 20px;
   font-weight: normal;
-  width: 50px;
+  width: 30px;
+  border-right: 1px solid #ccc;
+  padding-right: 10px;
 }
-/* line 33, ../src/main.scss */
+/* line 35, ../src/main.scss */
 .list li .bolter {
   width: auto;
+  border: 0;
 }
-/* line 37, ../src/main.scss */
+/* line 40, ../src/main.scss */
 .list li .grade {
   font-weight: bold;
 }
-/* line 42, ../src/main.scss */
+/* line 44, ../src/main.scss */
+.list li .bolts {
+  width: 80px;
+}
+/* line 48, ../src/main.scss */
+.list li .length {
+  width: 100px;
+}
+/* line 53, ../src/main.scss */
 .list p a {
   padding: 0 2px;
   margin: 0;
 }
-/* line 47, ../src/main.scss */
+/* line 58, ../src/main.scss */
 .list .ui-collapsible-content {
   background: #fff;
   border-right: 1px solid #ccc;
   border-left: 1px solid #ccc;
 }
 
-/* line 54, ../src/main.scss */
+/* line 65, ../src/main.scss */
 ol.list {
   counter-reset: item;
 }
-/* line 56, ../src/main.scss */
+/* line 67, ../src/main.scss */
 ol.list li {
   counter-increment: item;
   padding-left: 30px;
   list-style-type: none;
   position: relative;
 }
-/* line 62, ../src/main.scss */
+/* line 73, ../src/main.scss */
 ol.list li:before {
   content: counter(item, decimal) ".";
   font-size: 0.8em;
@@ -73,11 +84,11 @@ ol.list li:before {
   z-index: 1000;
   text-align: right;
 }
-/* line 74, ../src/main.scss */
+/* line 85, ../src/main.scss */
 ol.list li.disabled .ui-icon {
   display: none;
 }
-/* line 79, ../src/main.scss */
+/* line 90, ../src/main.scss */
 ol.list h4 a {
   padding-left: 30px;
 }
